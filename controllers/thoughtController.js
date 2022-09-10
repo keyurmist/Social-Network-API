@@ -21,4 +21,16 @@ const thoughtController = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
+  //create thought
+  createThought(req, res) {
+    Thought.create(req.body)
+      .then((thought) => res.json(thought))
+      .catch((err) => {
+        console.log("An error has occurred:", err);
+        res.status(500).json(err);
+      });
+  },
 };
+
+module.exports = thoughtController;

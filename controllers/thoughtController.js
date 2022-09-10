@@ -56,7 +56,7 @@ const thoughtController = {
           ? res.status(404).json({ message: "No thought with that ID" })
           : Thought.deleteMany({ _id: { $in: Thought.houghts } })
       )
-      .then(() => res.json({ message: "Course and students deleted!" }))
+      .then(() => res.json({ message: "Thoughts deleted!" }))
       .catch((err) => res.status(500).json(err));
   },
 

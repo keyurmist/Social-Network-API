@@ -10,7 +10,6 @@ const reactionSchema = new Schema(
     reactionBody: {
       type: String,
       required: true,
-      minlength: 1,
       maxlength: 280,
     },
 
@@ -28,8 +27,8 @@ const reactionSchema = new Schema(
   },
   {
     toJSON: {
-      getters: true,
       virtuals: true,
+      getters: true,
     },
   }
 );

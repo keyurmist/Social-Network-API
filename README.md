@@ -13,9 +13,9 @@
 
 ## Description
 
-This project was designed to demonstrate the back end of an e-commerce site. It uses Express.js, sequelize and MySQL for its database.
+This project uses APIs to allow users to share thoughts, add reactions, add friends.
 
-Walkthrough of mysql part: https://drive.google.com/file/d/11PPIGmQEOZzznX__RDz7_GPwvU0kMPBs/view
+Walkthrough video: https://drive.google.com/file/d/1b-gQBIU_LbrnKJm3LPwMRQbNU9CAZnxW/view
 
 ## Installation
 
@@ -31,9 +31,7 @@ npm install
 Please follow the instructions below to run the application:
 
 ```
-mysql -u root -p
-npm run seed/ node seeds
-run the server with nodemon or node index.js
+nodemon or node index.js
 ```
 
 ## Media

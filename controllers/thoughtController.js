@@ -47,6 +47,18 @@ const thoughtController = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
+  //delete thought
+  deleteThought(req, res) {
+    Thought.findOneAndDelete({ _id: req.params.thoughtId })
+      .then((thought) =>
+        !thought
+          ? res.status(404).json({ message: "No thought with that ID" })
+          : Thought.deleteMany({ _id: { $in: Thought.houghts } })
+      )
+      .then(() => res.json({ message: "Course and students deleted!" }))
+      .catch((err) => res.status(500).json(err));
+  },
 };
 
 module.exports = thoughtController;

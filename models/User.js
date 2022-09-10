@@ -4,15 +4,15 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      unique: [true, "That username is already in use!"],
-      required: [true, "Username should not be empty"],
+      unique: true,
+      required: true,
       trim: true,
     },
 
     email: {
       type: String,
-      unique: [true, "That email is already in use!"],
-      required: [true, "Email should not be empty"],
+      unique: true,
+      required: true,
       match: [
         /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         "Please enter a valid email address.",
@@ -44,6 +44,6 @@ const userSchema = new Schema(
 userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
-const User = model("User", userSchema);
+const User = model("user", userSchema);
 
 module.exports = User;
